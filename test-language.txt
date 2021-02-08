@@ -1,0 +1,42 @@
+base_tape "101"
+step1 {
+    "<empty>" {
+        write "<empty>"
+        move 1 // 1 means right and 0 means left
+        goto "step2"
+    }
+}
+step2 {
+    "<empty>" {
+        write "<empty>"
+        move 0
+        goto step3
+    }
+    "0" {
+        write "0"
+        move 1
+        goto "step2"
+    }
+    "1" {
+        write "1"
+        move 1
+        goto "step2"
+    }
+}
+step3 {
+    "<empty>" {
+        write "1"
+        move 0
+        goto "<end>"
+    }
+    "1" {
+        write "0"
+        move 0
+        goto "<end>"
+    }
+    "0" {
+        write "1"
+        move 0
+        goto "step3"
+    }
+}

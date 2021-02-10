@@ -1,0 +1,61 @@
+
+step1 {
+    "<empty>" {
+        write "<empty>";
+        move 1;
+        goto "step2";
+    }
+    <endstep>;
+}
+step2 {
+    "<empty>" {
+        write "<empty>";
+        move 0;
+        goto "step3";
+    }
+    "0" {
+        write "0";
+        move 1;
+        goto "step2";
+    }
+    "1" {
+        write "1";
+        move 1;
+        goto "step2";
+    }
+    <endstep>;
+}
+step3 {
+    "<empty>" {
+        write "1";
+        move 0;
+
+
+
+        goto "<end>";
+    }
+    "1" {
+        write "0";
+
+
+
+        move 0;
+        goto "<end>";
+    }
+    "0" {
+        write "1";
+
+
+
+        move 0;
+        goto "step3";
+
+
+
+    }
+    <endstep>;
+}
+
+
+
+base_tape "101";
